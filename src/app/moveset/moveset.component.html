@@ -1,0 +1,6 @@
+<div *ngIf="pokemon">
+    <h1>Moveset</h1>
+    <div *ngFor="let move of pokemon?.moveset">
+        <div>{{move}}</div>
+    </div>
+</div>

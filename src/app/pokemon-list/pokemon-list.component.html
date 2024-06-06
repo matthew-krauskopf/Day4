@@ -1,0 +1,4 @@
+<h2>Pokemon List</h2>
+<div *ngFor="let p of pokemon">
+    <button mat-flat-button (click)="selectPokemon(p)">{{p.name}}</button>
+</div>
