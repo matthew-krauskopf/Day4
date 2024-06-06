@@ -1,2 +1,10 @@
-<app-pokemon-list [pokemon]="mockData" (selectedPokemon)="selectedPokemon = $event"></app-pokemon-list>
-<app-moveset [pokemon]="selectedPokemon"></app-moveset>
+<h1>Pokedex</h1>
+
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav mode="side" opened>
+        <app-pokemon-list [pokemon]="mockData" (selectedPokemon)="selectedPokemon = $event"></app-pokemon-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-moveset [pokemon]="selectedPokemon"></app-moveset>
+    </mat-sidenav-content>
+</mat-sidenav-container>

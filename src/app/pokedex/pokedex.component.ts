@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { PokemonListComponent } from '../pokemon-list/pokemon-list.component';
 import { Pokemon } from '../pokemon';
 import { MovesetComponent } from '../moveset/moveset.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-pokedex',
   standalone: true,
-  imports: [PokemonListComponent, MovesetComponent],
+  imports: [PokemonListComponent, MovesetComponent, MatSidenavModule],
   templateUrl: './pokedex.component.html',
   styleUrl: './pokedex.component.css'
 })
