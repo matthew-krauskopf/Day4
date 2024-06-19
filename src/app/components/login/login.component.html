@@ -1,1 +1,18 @@
-<p>login works!</p>
+<div class="center">
+    <div class="bold big-text">Sign in</div>
+    <div>
+    <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput>
+    </mat-form-field>
+    </div>
+    <div>
+    <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput [type]="'password'">
+    </mat-form-field>
+    </div>
+    <div>
+    <button [routerLink]="'/home'">Login</button>
+    </div>
+</div>
