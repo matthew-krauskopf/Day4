@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Input } from '@angular/core';
-import { Pokemon } from '../pokemon';
+import { Pokemon } from '../../model/pokemon';
 import { NgFor } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 

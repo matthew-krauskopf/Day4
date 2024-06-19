@@ -2,3 +2,20 @@
 @import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.bold {
+    font-weight: bold;
+}
+
+.big-text {
+    font-size: xx-large;
+}
+
+.white-text {
+    color: white;
+}
+
+.spread {
+    justify-content:space-between;
+    align-items: flex-start;
+}
