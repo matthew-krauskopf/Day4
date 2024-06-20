@@ -1,0 +1,24 @@
+.card-size {
+    padding: 1rem;
+    max-width: 32rem;
+}
+
+.test {
+    justify-content: center;
+    display: flex;
+    margin-top: 12rem;
+}
+
+.margin {
+    margin-top: 12rem;
+}
+
+.grey {
+    background-color: rgb(250,250,250);
+}
+
+.login-button {
+    color: white !important;
+    background-color: red !important;
+    font-size: medium;
+}

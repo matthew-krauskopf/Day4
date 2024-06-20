@@ -1,18 +1,28 @@
-<div class="center">
-    <div class="bold big-text">Sign in</div>
-    <div>
-    <mat-form-field>
-        <mat-label>Username</mat-label>
-        <input matInput>
-    </mat-form-field>
-    </div>
-    <div>
-    <mat-form-field>
-        <mat-label>Password</mat-label>
-        <input matInput [type]="'password'">
-    </mat-form-field>
-    </div>
-    <div>
-    <button [routerLink]="'/home'">Login</button>
-    </div>
+<div class="full grey">
+    <form class="w-full flex center">
+        <mat-card class="margin card-size w-full center">
+            <mat-card-header>
+                <div class="bold big-text">Sign In</div>
+            </mat-card-header>
+            <mat-card-content class="padding-2 w-full">
+                <div class="flex flex-col">
+                    <div>
+                        <mat-form-field appearance="outline" class="w-full">
+                            <mat-label>Username</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline" class="w-full">
+                            <mat-label>Password</mat-label>
+                            <input matInput [type]="'password'">
+                        </mat-form-field>
+                    </div>
+                    <div class="center">
+                        <button mat-flat-button type="submit" class="w-full login-button" [routerLink]="'/home'">Login</button>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </form>
 </div>
