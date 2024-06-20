@@ -45,10 +45,16 @@ export class PokedexComponent {
   ]
 
   selectedPokemon? : Pokemon;
+  newPokemon? : Pokemon;
   sidenavOpened : boolean = true;
 
   toggleButton($val : boolean) {
     this.sidenavOpened = $val;
+  }
+
+  createPokemon($event : Pokemon) {
+    this.mockData.push($event);
+    this.mockData.sort((a, b) => a.id - b.id)  
   }
 }
 

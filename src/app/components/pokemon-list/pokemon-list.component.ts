@@ -17,8 +17,18 @@ export class PokemonListComponent {
   
   @Input() pokemon? : Pokemon[]
   @Output() selectedPokemon = new EventEmitter<Pokemon>();
+  @Output() newPokemon = new EventEmitter<Pokemon>();
 
   selectPokemon(pokemon : Pokemon) {
     this.selectedPokemon.emit(pokemon);
+  }
+
+  createPokemon() {
+    const newMon : Pokemon = {
+      "id": 0,
+      "name": "New Pokemon",
+      "moveset": []
+    }
+    this.newPokemon.emit(newMon);
   }
 }
