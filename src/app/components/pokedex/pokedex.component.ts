@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, } from '@angular/core';
 import { PokemonListComponent } from '../pokemon-list/pokemon-list.component';
 import { Pokemon } from '../../model/pokemon';
 import { MovesetComponent } from '../moveset/moveset.component';
@@ -45,5 +45,10 @@ export class PokedexComponent {
   ]
 
   selectedPokemon? : Pokemon;
+  sidenavOpened : boolean = true;
+
+  toggleButton($val : boolean) {
+    this.sidenavOpened = $val;
+  }
 }
 

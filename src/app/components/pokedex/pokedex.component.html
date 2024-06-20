@@ -1,10 +1,11 @@
-<app-toolbar></app-toolbar>
-
-<mat-sidenav-container class="sidenav-container">
-    <mat-sidenav mode="side" opened>
-        <app-pokemon-list [pokemon]="mockData" (selectedPokemon)="selectedPokemon = $event"></app-pokemon-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <app-moveset [pokemon]="selectedPokemon"></app-moveset>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+<div class="box">
+    <app-toolbar (emitter)="toggleButton($event)"></app-toolbar>
+    <mat-sidenav-container class="row content">
+        <mat-sidenav mode="side" [opened]="sidenavOpened" class="sidenav">
+            <app-pokemon-list [pokemon]="mockData" (selectedPokemon)="selectedPokemon = $event"></app-pokemon-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <app-moveset [pokemon]="selectedPokemon"></app-moveset>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

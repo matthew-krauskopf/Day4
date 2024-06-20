@@ -1,3 +1,4 @@
-.sidenav-container {
-    height: 80vw;
+.sidenav {
+    width: 10rem;
+    background-color: rgb(175, 175, 175);
 }

@@ -1,4 +1,17 @@
-<h2>Pokemon List</h2>
-<div *ngFor="let p of pokemon">
-    <button mat-flat-button (click)="selectPokemon(p)">{{p.name}}</button>
+<div class="center">
+    <button mat-flat-button class="spread w-full">
+        <div class="w-full spread">
+            <span>Add Pokemon</span>
+            <span><mat-icon class="mat-icon">upload</mat-icon></span>
+        </div>
+    </button>
+    <div *ngFor="let p of pokemon">
+        <mat-divider></mat-divider>
+        <button class="spread w-full" mat-flat-button (click)="selectPokemon(p)">
+            <div class="">
+                <span>{{p.id}}. </span>
+                <span>{{p.name}}</span>
+            </div>
+        </button>
+    </div>
 </div>

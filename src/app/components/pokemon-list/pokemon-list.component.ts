@@ -3,11 +3,13 @@ import { Input } from '@angular/core';
 import { Pokemon } from '../../model/pokemon';
 import { NgFor } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
+import {MatDividerModule} from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-pokemon-list',
   standalone: true,
-  imports: [NgFor, MatButtonModule],
+  imports: [NgFor, MatButtonModule, MatDividerModule, MatIconModule],
   templateUrl: './pokemon-list.component.html',
   styleUrl: './pokemon-list.component.css'
 })
