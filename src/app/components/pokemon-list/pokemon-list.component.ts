@@ -5,6 +5,7 @@ import { NgFor } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
+import { PokemonService } from '../../services/pokemon.service';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -19,7 +20,7 @@ export class PokemonListComponent {
   @Output() selectedPokemon = new EventEmitter<Pokemon>();
   @Output() newPokemon = new EventEmitter<Pokemon>();
 
-  imgUrl : string = "https://serebii.net/pokedex-xy/icon/{}.png";
+  constructor(public pokemonService : PokemonService) {}
 
   selectPokemon(pokemon : Pokemon) {
     this.selectedPokemon.emit(pokemon);
@@ -32,9 +33,5 @@ export class PokemonListComponent {
       "moveset": []
     }
     this.newPokemon.emit(newMon);
-  }
-
-  getPokemonIcon(pokemon : Pokemon) {
-    return this.imgUrl.replace("{}", String(pokemon.id).padStart(3, "0"));  
   }
 }

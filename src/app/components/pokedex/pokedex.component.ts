@@ -4,6 +4,7 @@ import { Pokemon } from '../../model/pokemon';
 import { MovesetComponent } from '../moveset/moveset.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { ToolbarComponent } from '../toolbar/toolbar.component';
+import { PokemonService } from '../../services/pokemon.service';
 
 @Component({
   selector: 'app-pokedex',
@@ -14,35 +15,11 @@ import { ToolbarComponent } from '../toolbar/toolbar.component';
 })
 export class PokedexComponent {
 
-  mockData : Pokemon[] = [
-    {
-      id: 1,
-      name: "Bulbasaur",
-      moveset: [
-        "Razor Leaf",
-        "Tackle",
-        "Growl"
-      ]
-    },
-    {
-      id: 4,
-      name: "Charmander",
-      moveset: [
-        "Ember",
-        "Tail Whip",
-        "Protect"
-      ]
-    },
-    {
-      id: 7,
-      name: "Squirtle",
-      moveset: [
-        "Water Gun",
-        "Double Team",
-        "Skull Bash"
-      ]
-    }
-  ]
+  allPokemon : Pokemon[];
+
+  constructor(pokemonService : PokemonService) {
+    this.allPokemon = pokemonService.getPokemon();
+  }
 
   selectedPokemon? : Pokemon;
   newPokemon? : Pokemon;
@@ -53,20 +30,20 @@ export class PokedexComponent {
   }
 
   createPokemon($event : Pokemon) {
-    this.mockData.push($event);
+    this.allPokemon.push($event);
     $event.id = this.getNewPokemonId();
-    this.mockData.sort((a, b) => a.id - b.id)  
+    this.allPokemon.sort((a, b) => a.id - b.id)  
     this.selectedPokemon = $event;
   }
 
   deletePokemon(pokemon : Pokemon) {
-    this.mockData = this.mockData.filter(p => p.id != pokemon.id);
+    this.allPokemon = this.allPokemon.filter(p => p.id != pokemon.id);
     this.selectedPokemon = undefined;
   }
 
   getNewPokemonId() : number {
     let max = 0;
-    for (let data of this.mockData) {
+    for (let data of this.allPokemon) {
       max = max > data.id ? max : data.id;
     }
     return max+1;

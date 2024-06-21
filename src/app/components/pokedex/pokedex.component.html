@@ -2,7 +2,7 @@
     <app-toolbar (emitter)="toggleButton($event)"></app-toolbar>
     <mat-sidenav-container class="row content">
         <mat-sidenav mode="side" [opened]="sidenavOpened" class="sidenav">
-            <app-pokemon-list [pokemon]="mockData" (newPokemon)="createPokemon($event)" 
+            <app-pokemon-list [pokemon]="allPokemon" (newPokemon)="createPokemon($event)" 
                 (selectedPokemon)="selectedPokemon = $event"></app-pokemon-list>
         </mat-sidenav>
         <mat-sidenav-content>

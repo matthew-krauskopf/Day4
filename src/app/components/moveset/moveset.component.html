@@ -1,6 +1,6 @@
 <div class="row content top-parent" *ngIf="pokemon">
     <div class="flex center w-full title">
-        <img [src]=getPokemonIcon(pokemon)>
+        <img [src]=pokemonService.getPokemonImage(pokemon)>
         <h1>{{pokemon.name}}</h1>
         <button mat-icon-button (click)="editNameDialog()"><mat-icon>edit</mat-icon></button>
         <button mat-icon-button class="icon_button" (click)="deletePokemon()"><mat-icon>delete</mat-icon></button>

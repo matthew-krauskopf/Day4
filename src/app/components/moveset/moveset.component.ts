@@ -6,6 +6,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
 import { EditMenuComponent } from '../edit-menu/edit-menu.component';
+import { PokemonService } from '../../services/pokemon.service';
 
 @Component({
   selector: 'app-moveset',
@@ -18,10 +19,7 @@ export class MovesetComponent {
   @Input() pokemon? : Pokemon;
   @Output() deleteSignal = new EventEmitter<Pokemon>();
 
-  constructor(public dialog : MatDialog) {
-  }
-
-  imgUrl : string = "https://serebii.net/blackwhite/pokemon/{}.png";
+  constructor(protected dialog : MatDialog, protected pokemonService : PokemonService) {}
 
   generateArr() {
     const arr : number[] = [];
@@ -82,9 +80,5 @@ export class MovesetComponent {
     dialogRef.afterClosed().subscribe(dialogOutput => {
       if (dialogOutput.label) this.pokemon!.moveset.push(dialogOutput.label);
     });
-  }
-
-  getPokemonIcon(pokemon : Pokemon) {
-    return this.imgUrl.replace("{}", String(pokemon.id).padStart(3, "0"));  
   }
 }
