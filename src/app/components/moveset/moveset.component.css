@@ -8,11 +8,6 @@
     margin: 10px 10px;
 }
 
-.top-parent {
-   /* display: flex;
-    flex-wrap: wrap; */
-}
-
 .padding-4 {
     padding: 4px
 }
@@ -21,7 +16,7 @@
     padding-left: 5%;
 }
 
-.padding-half {
+.padding-top-10 {
     padding-top: 10px;
 }
 

@@ -7,7 +7,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-weight: bold;
 }
 
-.big-text {
+.xx-text {
     font-size: xx-large;
 }
 
@@ -51,8 +51,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     height: 100%;
 }
 
-.padding-2 {
-    padding-top: 16px !important;
+.margin-top-16 {
+    margin-top: 16px;
 }
 
 .box {
@@ -71,4 +71,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .align-center {
     align-items: center;
+}
+
+.mat-mdc-unelevated-button {
+    --mdc-filled-button-container-shape: 0;
 }

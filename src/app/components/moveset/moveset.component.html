@@ -12,7 +12,7 @@
             </div>
             <mat-card-content>
                 <div class="center flex">
-                    <span class="padding-half left-padding bold xlarge">{{move}}</span>
+                    <span class="padding-top-10 left-padding bold xlarge">{{move}}</span>
                     <button mat-icon-button class="" (click)="editMoveDialog(i)"><mat-icon>edit</mat-icon></button>
                 </div>
             </mat-card-content>
@@ -20,7 +20,7 @@
         <mat-card class="card padding-4 margin-10 center" *ngFor="let i of generateArr()">
             <mat-card-content>
                 <div class="center flex">
-                    <button mat-icon-button class="padding-half" (click)="addMoveDialog()"><mat-icon>add_circle</mat-icon></button>
+                    <button mat-icon-button class="padding-top-10" (click)="addMoveDialog()"><mat-icon>add_circle</mat-icon></button>
                 </div>
             </mat-card-content>
         </mat-card>
