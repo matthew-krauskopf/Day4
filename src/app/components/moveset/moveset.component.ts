@@ -49,8 +49,12 @@ export class MovesetComponent {
     });
 
     dialogRef.afterClosed().subscribe(dialogOutput => {
-      if (dialogOutput.label) this.pokemon!.name = dialogOutput.label;
-      if (dialogOutput.id) this.pokemon!.id = dialogOutput.id;
+      if (dialogOutput.label) {
+        this.pokemon!.name = dialogOutput.label;
+      }
+      if (dialogOutput.id) {
+        this.pokemon!.id = dialogOutput.id;
+      }
     });
   }
 

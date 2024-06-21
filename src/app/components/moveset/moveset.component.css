@@ -1,8 +1,7 @@
 .card {
     background-color: rgba(151, 151, 214, 0.603);
-    row-gap: 20px;
     width: calc(50% - 20px);
-    min-height: 45%;
+    min-height: 160px
 }
 
 .margin-10 {
@@ -12,11 +11,14 @@
 .top-parent {
    /* display: flex;
     flex-wrap: wrap; */
-    min-height: 60%
 }
 
-.padding-16 {
-    padding: 16px
+.padding-4 {
+    padding: 4px
+}
+
+.left-padding {
+    padding-left: 5%;
 }
 
 .padding-half {
@@ -32,8 +34,11 @@
 }
 
 .card-container {
-    height : calc(100% - 100px);
-    width: 100%;
     display: flex;
     flex-wrap: wrap;
+    height: 60%;
+}
+
+.icon_button {
+    margin-left: 20px;
 }
