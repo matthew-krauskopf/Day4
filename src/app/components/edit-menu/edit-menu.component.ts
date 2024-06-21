@@ -1,7 +1,6 @@
 import { Component, Inject } from '@angular/core';
 
 import {
-  MatDialog,
   MAT_DIALOG_DATA,
   MatDialogRef,
   MatDialogTitle,
@@ -33,10 +32,15 @@ import { MatButtonModule } from '@angular/material/button';
 export class EditMenuComponent {
   constructor(
     public dialogRef: MatDialogRef<EditMenuComponent>,
-    @Inject(MAT_DIALOG_DATA) public fieldVal: string,
+    @Inject(MAT_DIALOG_DATA) public input: DialogInput,
   ) {}
 
   onNoClick(): void {
     this.dialogRef.close();
   }
+}
+
+interface DialogInput {
+  label: string,
+  initVal: string
 }

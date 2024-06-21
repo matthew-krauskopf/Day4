@@ -54,7 +54,22 @@ export class PokedexComponent {
 
   createPokemon($event : Pokemon) {
     this.mockData.push($event);
+    $event.id = this.getNewPokemonId();
     this.mockData.sort((a, b) => a.id - b.id)  
+    this.selectedPokemon = $event;
+  }
+
+  deletePokemon(pokemon : Pokemon) {
+    this.mockData = this.mockData.filter(p => p.id != pokemon.id);
+    this.selectedPokemon = undefined;
+  }
+
+  getNewPokemonId() : number {
+    let max = 0;
+    for (let data of this.mockData) {
+      max = max > data.id ? max : data.id;
+    }
+    return max+1;
   }
 }
 

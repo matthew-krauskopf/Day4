@@ -1,12 +1,12 @@
-<h2 mat-dialog-title>Update Name</h2>
+<h2 mat-dialog-title>{{input.label}}</h2>
 <mat-dialog-content>
     <div>
         <mat-form-field>
-            <input matInput [(ngModel)]="fieldVal" placeholder={{fieldVal}}>
+            <input matInput [(ngModel)]="input.initVal" placeholder={{input.initVal}}>
         </mat-form-field>
     </div>
 </mat-dialog-content>
 <mat-dialog-actions>
     <button mat-button (click)="onNoClick()">Cancel</button>
-    <button mat-button [mat-dialog-close]="fieldVal" cdkFocusInitial>Save</button>
+    <button mat-button [mat-dialog-close]="input.initVal" cdkFocusInitial>Save</button>
 </mat-dialog-actions>

@@ -1,0 +1,39 @@
+.card {
+    background-color: rgba(151, 151, 214, 0.603);
+    row-gap: 20px;
+    width: calc(50% - 20px);
+    min-height: 45%;
+}
+
+.margin-10 {
+    margin: 10px 10px;
+}
+
+.top-parent {
+   /* display: flex;
+    flex-wrap: wrap; */
+    min-height: 60%
+}
+
+.padding-16 {
+    padding: 16px
+}
+
+.padding-half {
+    padding-top: 10px;
+}
+
+.title {
+    height: 100px
+}
+
+.move-buttons {
+    margin: 0px 10px;
+}
+
+.card-container {
+    height : calc(100% - 100px);
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}

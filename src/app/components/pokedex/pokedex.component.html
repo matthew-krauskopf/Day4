@@ -6,7 +6,7 @@
                 (selectedPokemon)="selectedPokemon = $event"></app-pokemon-list>
         </mat-sidenav>
         <mat-sidenav-content>
-            <app-moveset [pokemon]="selectedPokemon"></app-moveset>
+            <app-moveset (deleteSignal)="deletePokemon($event)" [pokemon]="selectedPokemon"></app-moveset>
         </mat-sidenav-content>
     </mat-sidenav-container>
 </div>

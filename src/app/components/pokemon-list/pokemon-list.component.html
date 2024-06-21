@@ -5,12 +5,13 @@
             <span><mat-icon class="mat-icon">upload</mat-icon></span>
         </div>
     </button>
-    <div *ngFor="let p of pokemon">
+    <div *ngFor="let p of pokemon" class="spread w-full">
         <mat-divider></mat-divider>
         <button class="spread w-full" mat-flat-button (click)="selectPokemon(p)">
             <div class="">
                 <span>{{p.id}}. </span>
                 <span>{{p.name}}</span>
+                <span><img [src]=getPokemonIcon(p)></span>
             </div>
         </button>
     </div>

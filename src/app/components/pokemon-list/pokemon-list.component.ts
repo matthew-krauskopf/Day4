@@ -19,6 +19,8 @@ export class PokemonListComponent {
   @Output() selectedPokemon = new EventEmitter<Pokemon>();
   @Output() newPokemon = new EventEmitter<Pokemon>();
 
+  imgUrl : string = "https://serebii.net/pokedex-xy/icon/{}.png";
+
   selectPokemon(pokemon : Pokemon) {
     this.selectedPokemon.emit(pokemon);
   }
@@ -30,5 +32,9 @@ export class PokemonListComponent {
       "moveset": []
     }
     this.newPokemon.emit(newMon);
+  }
+
+  getPokemonIcon(pokemon : Pokemon) {
+    return this.imgUrl.replace("{}", String(pokemon.id).padStart(3, "0"));  
   }
 }
