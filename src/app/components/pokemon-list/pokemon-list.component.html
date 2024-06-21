@@ -1,17 +1,17 @@
-<div class="center">
-    <button mat-flat-button class="spread w-full" (click)="createPokemon()">
-        <div class="w-full spread">
+<div>
+    <button mat-flat-button class="w-full" (click)="createPokemon()">
+        <div>
             <span>Add Pokemon</span>
             <span><mat-icon class="mat-icon">upload</mat-icon></span>
         </div>
     </button>
-    <div *ngFor="let p of pokemon" class="spread w-full">
+    <div *ngFor="let p of pokemon">
         <mat-divider></mat-divider>
-        <button class="spread w-full" mat-flat-button (click)="selectPokemon(p)">
-            <div class="">
+        <button class="w-full" mat-flat-button (click)="selectPokemon(p)">
+            <div class="align-center between flex">
                 <span>{{p.id}}. </span>
                 <span>{{p.name}}</span>
-                <span><img [src]=getPokemonIcon(p)></span>
+                <img [src]=getPokemonIcon(p)>
             </div>
         </button>
     </div>

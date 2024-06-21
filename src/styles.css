@@ -20,6 +20,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     align-items: flex-start;
 }
 
+.between {
+    justify-content: space-between;
+}
+
 .center {
     justify-content: center;
     align-items: center;
@@ -63,4 +67,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .xlarge {
     font-size: x-large;
+}
+
+.align-center {
+    align-items: center;
 }

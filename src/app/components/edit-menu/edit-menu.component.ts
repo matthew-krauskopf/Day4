@@ -12,6 +12,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { MatButtonModule } from '@angular/material/button';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-edit-menu',
@@ -25,6 +26,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatDialogContent,
     MatDialogActions,
     MatDialogClose,
+    NgIf
   ],
   templateUrl: './edit-menu.component.html',
   styleUrl: './edit-menu.component.css'
@@ -32,7 +34,7 @@ import { MatButtonModule } from '@angular/material/button';
 export class EditMenuComponent {
   constructor(
     public dialogRef: MatDialogRef<EditMenuComponent>,
-    @Inject(MAT_DIALOG_DATA) public input: DialogInput,
+    @Inject(MAT_DIALOG_DATA) public dialogData: DialogInput,
   ) {}
 
   onNoClick(): void {
@@ -41,6 +43,7 @@ export class EditMenuComponent {
 }
 
 interface DialogInput {
-  label: string,
-  initVal: string
+  title: string,
+  label: string
+  id: number;
 }

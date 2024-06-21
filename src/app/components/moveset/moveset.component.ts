@@ -42,42 +42,43 @@ export class MovesetComponent {
   editNameDialog(): void {
     const dialogRef = this.dialog.open(EditMenuComponent, {
       data: {
-        "label": "Edit Pokemon Name", 
-        "initVal": this.pokemon!.name
+        "title": "Edit Pokemon Name", 
+        "label": this.pokemon!.name,
+        "id": this.pokemon!.id,
       }
     });
 
-    dialogRef.afterClosed().subscribe(newName => {
-      if (newName) this.pokemon!.name = newName;
+    dialogRef.afterClosed().subscribe(dialogOutput => {
+      if (dialogOutput.label) this.pokemon!.name = dialogOutput.label;
+      if (dialogOutput.id) this.pokemon!.id = dialogOutput.id;
     });
   }
 
   editMoveDialog(i : number) {
     const dialogRef = this.dialog.open(EditMenuComponent, {
       data: {
-        "label": "Edit Move Name", 
-        "initVal": this.pokemon!.moveset[i]
+        "title": "Edit Move Name", 
+        "label": this.pokemon!.moveset[i]
       }
     });
 
-    dialogRef.afterClosed().subscribe(newName => {
-      if (newName) this.pokemon!.moveset[i] = newName;
+    dialogRef.afterClosed().subscribe(dialogOutput => {
+      if (dialogOutput.label) this.pokemon!.moveset[i] = dialogOutput.label;
     });
   }
 
   addMoveDialog() {
     const dialogRef = this.dialog.open(EditMenuComponent, {
       data: {
-        "label": "Add Move", 
-        "initVal": ""
+        "title": "Add Move", 
+        "label": ""
       }
     });
 
-    dialogRef.afterClosed().subscribe(newMove => {
-      if (newMove) this.pokemon!.moveset.push(newMove);
+    dialogRef.afterClosed().subscribe(dialogOutput => {
+      if (dialogOutput.label) this.pokemon!.moveset.push(dialogOutput.label);
     });
   }
-
 
   getPokemonIcon(pokemon : Pokemon) {
     return this.imgUrl.replace("{}", String(pokemon.id).padStart(3, "0"));  

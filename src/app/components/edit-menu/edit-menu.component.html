@@ -1,12 +1,17 @@
-<h2 mat-dialog-title>{{input.label}}</h2>
+<div class="center flex">
+    <h2 mat-dialog-title >{{dialogData.label}}</h2>
+</div>
 <mat-dialog-content>
     <div>
+        <mat-form-field *ngIf="dialogData.id" class="number-input">
+            <input matInput [(ngModel)]="dialogData.id" placeholder={{dialogData.id}} type="number" min=1 max=1000>
+        </mat-form-field>
         <mat-form-field>
-            <input matInput [(ngModel)]="input.initVal" placeholder={{input.initVal}}>
+            <input matInput [(ngModel)]="dialogData.label" placeholder={{dialogData.label}}>
         </mat-form-field>
     </div>
 </mat-dialog-content>
 <mat-dialog-actions>
     <button mat-button (click)="onNoClick()">Cancel</button>
-    <button mat-button [mat-dialog-close]="input.initVal" cdkFocusInitial>Save</button>
+    <button mat-button [mat-dialog-close]="dialogData" cdkFocusInitial>Save</button>
 </mat-dialog-actions>
